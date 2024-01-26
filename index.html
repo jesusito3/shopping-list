@@ -45,6 +45,11 @@
         const listItems = document.createElement('li');
         const span = document.createElement('span');
         const btn2 = document.createElement('button');
+        listItems.appendChild(span);
+        listItems.appendChild(btn2);
+        span.textContent = input;
+        btn2.textContent = 'Delete';
+        list.appendChild(listItems);
 
     </script>
   </body>
