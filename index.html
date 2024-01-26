@@ -37,19 +37,28 @@
         const btn = document.querySelector('button');
 
         btn.addEventListener('click', () => {
-            const input = userInput;
-            input = "";
+            const item = userInput.value;
+            userInput.value = "";
+
+
+            const listItems = document.createElement('li');
+            const span = document.createElement('span');
+            const btn2 = document.createElement('button');
+
+            listItems.appendChild(span);
+            listItems.appendChild(btn2);
+            span.textContent = item;
+            btn2.textContent = 'Delete';
+            list.appendChild(listItems);
+
+            btn2.addEventListener('click', () => {
+                listItems.remove();
+            });
+            input.focus();
         });
 
 
-        const listItems = document.createElement('li');
-        const span = document.createElement('span');
-        const btn2 = document.createElement('button');
-        listItems.appendChild(span);
-        listItems.appendChild(btn2);
-        span.textContent = input;
-        btn2.textContent = 'Delete';
-        list.appendChild(listItems);
+        
 
     </script>
   </body>
